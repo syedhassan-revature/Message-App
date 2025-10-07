@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Example bean definitions -->
+    <!-- Replace these with your actual beans -->
+
+    <!-- DataSource bean example -->
+    <!--
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+     <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+     <property name="url" value="jdbc:mysql://localhost:3306/yourdb"/>
+     <property name="username" value="yourusername"/>
+     <property name="password" value="yourpassword"/>
+    </bean>
+    -->
+
+    <!-- Service bean example -->
+    <!--
+    <bean id="messageService" class="com.example.service.MessageServiceImpl">
+     <property name="messageRepository" ref="messageRepository"/>
+    </bean>
+    -->
+
+    <!-- Repository bean example -->
+    <!--
+    <bean id="messageRepository" class="com.example.repository.MessageRepositoryImpl"/>
+    -->
+
+<bean id="messageService" class="com.ahtsham.MessageService">
+        <property name="text" value="Default message"/>
+    </bean>
+
+    <bean id="emailService" class="com.ahtsham.EmailService">
+        <property name="emailAddress" value="user@example.com"/>
+    </bean>
+
+    
+    <bean id="notificationService" class="com.ahtsham.NotificationService">
+        
+        <property name="message" ref="message"/>
+        <property name="emailService" ref="emailService"/>
+=    </bean>
+
+
+
+
+</beans>
